@@ -1,0 +1,483 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* ==== Navbar ==== */
+.navbar {
+    background-color: #1b1b1b;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+    .navbar .logo {
+        font-weight: bold;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar nav a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
+
+    .navbar .search {
+        padding: 6px 10px;
+        margin: 0 20px;
+        border-radius: 4px;
+        border: none;
+        width: 200px;
+    }
+
+    .navbar .icons span {
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+/* ==== Hero Slider ==== */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+    .slide.active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+.overlay {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    color: white;
+    max-width: 500px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+    .overlay h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .overlay p {
+        font-size: 1.2rem;
+    }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.6);
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 3;
+    transition: background 0.3s;
+}
+
+    .arrow:hover {
+        background-color: white;
+    }
+
+    .arrow.left {
+        left: 20px;
+    }
+
+    .arrow.right {
+        right: 20px;
+    }
+
+/* ==== Main Content ==== */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Top Picks Section */
+.section {
+    background: white;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    background: #e8f4f8;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    border: 3px solid #fff;
+}
+
+.product-item {
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    color: #333;
+}
+
+    .product-item:hover {
+        transform: translateY(-5px);
+    }
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Product images */
+.product-1 {
+    background: linear-gradient(45deg, #000, #4CAF50);
+}
+
+.product-2 {
+    background: linear-gradient(45deg, #333, #666);
+}
+
+.product-3 {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+}
+
+.product-4 {
+    background: linear-gradient(45deg, #FF5722, #FFC107);
+}
+
+.product-5 {
+    background: linear-gradient(45deg, #E91E63, #F44336);
+}
+
+.product-6 {
+    background: linear-gradient(45deg, #9C27B0, #E91E63);
+}
+
+/* Newly Launched Section */
+.newly-launched {
+    background: #f8f9fa;
+}
+
+    .newly-launched .products-grid {
+        border: none;
+        background: #f8f9fa;
+    }
+
+.newly-product-1 {
+    background: linear-gradient(45deg, #00BCD4, #4CAF50);
+}
+
+.newly-product-2 {
+    background: linear-gradient(45deg, #333, #000);
+}
+
+.newly-product-3 {
+    background: linear-gradient(45deg, #F44336, #E91E63);
+}
+
+.newly-product-4 {
+    background: linear-gradient(45deg, #9C27B0, #673AB7);
+}
+
+.newly-product-5 {
+    background: linear-gradient(45deg, #424242, #000);
+}
+
+/* Customer Reviews Section */
+.reviews-section {
+    background: white;
+    padding: 0;
+}
+
+.reviews-header {
+    background: #e8f4f8;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.reviewer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background: linear-gradient(45deg, #FF9800, #F44336);
+}
+
+.reviewer-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.stars {
+    color: #FFC107;
+    font-size: 16px;
+}
+
+/* Features Section */
+.features-section {
+    background: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: #555;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.feature-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.feature-desc {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: #4a90e2;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.newsletter-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.newsletter-desc {
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.newsletter-btn {
+    padding: 12px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .newsletter-btn:hover {
+        background: #555;
+    }
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    color: #4a90e2;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+    .footer-section a:hover {
+        color: #4a90e2;
+    }
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    background: #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+    .social-link:hover {
+        background: #4a90e2;
+    }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #999;
+    font-size: 12px;
+}
+
+.klava {
+    margin-top: 5px;
+}
+
+.klavafoto {
+    margin-top: 35px;
+}
+
+.klava2 {
+    margin-top: 5px;
+}
+
+.klavafoto2 {
+    margin-top: 20px;
+    resize: both;
+}
+
+
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input {
+        margin-bottom: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .navbar .search {
+            width: 100%;
+            margin: 0;
+        }
+}
